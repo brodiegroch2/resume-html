@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template | Professional Resume</title>
+    <meta name="description" content="Professional resume template. Customize with your experience, education, and skills.">
+    <meta name="keywords" content="Resume, CV, Resume Template, Professional Resume">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .resume-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .nav-button {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-button:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover svg path {
+            fill: white;
+        }
+
+        .nav-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .nav-button svg path {
+            fill: #333;
+            transition: fill 0.3s ease;
+        }
+
+        .resume-container {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .skills-line {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 5px;
+            align-items: center;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            display: inline-block;
+            opacity: 0.8;
+        }
+
+        .contact-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .contact-icon svg path,
+        .contact-icon svg circle,
+        .contact-icon svg rect,
+        .contact-icon svg polyline {
+            fill: #333;
+            stroke: none;
+        }
+
+        .contact-item a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            word-break: break-word;
+        }
+
+        .contact-item a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .contact-item span:not(.contact-icon) {
+            color: #555;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        .page-1-summary {
+            margin-bottom: 30px;
+        }
+
+        .resume-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .page-1 {
+            margin-bottom: 0;
+        }
+
+        .page-2-education {
+            page-break-before: always;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .page-2 {
+            margin-top: 0;
+        }
+
+        .page-1-left,
+        .page-1-right,
+        .page-2-left,
+        .page-2-right {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .section:first-of-type {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #000;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .experience-item,
+        .project-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .education-logo {
+            flex-shrink: 0;
+            width: 45px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .education-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-height: 45px;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .job-header,
+        .project-header,
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .job-header > div:first-child {
+            flex: 0 0 65%;
+        }
+
+        .job-header > div:last-child {
+            flex: 0 0 35%;
+            text-align: right;
+        }
+
+        .job-title,
+        .project-title,
+        .degree-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .company-name,
+        .project-org {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-top: 3px;
+        }
+
+        .project-tag {
+            font-size: 0.85rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .date-location {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: right;
+        }
+
+        .location {
+            line-height: 1.2;
+        }
+
+        .dates {
+            line-height: 1.2;
+        }
+
+        .job-description,
+        .project-description {
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .bullet-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .achievement-item,
+        .cert-item,
+        .course-item,
+        .award-item {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .achievement-title,
+        .cert-title,
+        .course-title,
+        .award-title {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .course-score {
+            color: #666;
+            font-style: italic;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume-nav {
+                display: none !important;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 40px;
+                max-width: 210mm;
+                margin: 0 auto;
+            }
+            .page-1-summary {
+                margin-bottom: 30px;
+            }
+            .resume-content {
+                display: grid !important;
+                grid-template-columns: 2fr 1fr !important;
+                gap: 30px !important;
+            }
+            .page-1 {
+                margin-bottom: 0;
+            }
+            .page-2-education {
+                page-break-before: always !important;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .page-2 {
+                margin-top: 0;
+            }
+            .page-1-left,
+            .page-1-right,
+            .page-2-left,
+            .page-2-right {
+                display: block !important;
+            }
+            .main-column,
+            .sidebar-column {
+                display: block !important;
+            }
+            @page {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-content {
+                grid-template-columns: 1fr;
+            }
+            .resume-header {
+                flex-direction: column;
+            }
+            .profile-pic {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-nav">
+        <button class="nav-button" onclick="window.print()" title="Print">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="resume-container">
+        <div class="resume-header">
+            <div class="header-left">
+                <h1 class="name">[YOUR FULL NAME]</h1>
+                <div class="skills-line">
+                    [Your Title/Role] | [Key Skill 1] & [Key Skill 2] | [Additional Qualification]
+                </div>
+                <div class="contact-info">
+                    <div class="contact-line">
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </span>
+                            <span>[City, State/Province]</span>
+                        </div>
+                        <span style="color: #999;">•</span>
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </span>
+                            <a href="tel:[PhoneNumber]">[Phone Number]</a>
+                        </div>
+                        <span style="color: #999;">•</span>
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </span>
+                            <a href="mailto:[EmailAddress]">[Email Address]</a>
+                        </div>
+                    </div>
+                    <div class="contact-line">
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zM8.03 8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+                                </svg>
+                            </span>
+                            <a href="[YourWebsiteURL]" target="_blank">[Your Website]</a>
+                        </div>
+                        <span style="color: #999;">•</span>
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </span>
+                            <a href="[LinkedInURL]" target="_blank">[LinkedIn Profile]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 1: Professional Summary (Full Width) -->
+        <div class="page-1-summary">
+            <section class="section">
+                <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                <p class="job-description">
+                    [Your Field/Role] with a [Degree/Certification], specialising in [Specialization 1], [Specialization 2], and [Specialization 3]. Strong [Foundation/Background], disciplined [Skill/Approach], and proven ability to deliver [Type of Work] under constraints.
+                </p>
+            </section>
+        </div>
+
+        <!-- PAGE 1: Two Columns -->
+        <div class="resume-content page-1">
+            <div class="page-1-left">
+                <section class="section">
+                    <h2 class="section-title">EXPERIENCE</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">[Job Title] – [Company Name]</div>
+                            </div>
+                            <div class="date-location">
+                                <div class="location">[City, State/Province]</div>
+                                <div class="dates">[MM/YYYY] – [MM/YYYY]</div>
+                            </div>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>[Accomplishment or responsibility using action verbs and quantifiable results when possible].</li>
+                            <li>[Key achievement or responsibility that demonstrates impact and skills].</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">[Job Title] – [Company Name]</div>
+                            </div>
+                            <div class="date-location">
+                                <div class="location">[City, State/Province]</div>
+                                <div class="dates">[MM/YYYY] – [MM/YYYY]</div>
+                            </div>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>[Primary responsibility or achievement that showcases relevant skills and experience].</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">[Job Title] – [Company Name]</div>
+                            </div>
+                            <div class="date-location">
+                                <div class="location">[City, State/Province]</div>
+                                <div class="dates">[MM/YYYY] – [MM/YYYY]</div>
+                            </div>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>[Key responsibility or achievement demonstrating leadership or technical skills].</li>
+                            <li>[Additional accomplishment that shows problem-solving or operational excellence].</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="page-1-right">
+                <section class="section">
+                    <h2 class="section-title">CERTIFICATIONS</h2>
+                    <ul class="bullet-list">
+                        <li>[Certification Name] – [Issuing Organization]</li>
+                        <li>[Certification Name] ([Details]) – [Issuing Organization]</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">CORE COMPETENCIES</h2>
+                    <ul class="bullet-list">
+                        <li>[Core Skill or Competency 1]</li>
+                        <li>[Core Skill or Competency 2]</li>
+                        <li>[Core Skill or Competency 3]</li>
+                        <li>[Core Skill or Competency 4]</li>
+                        <li>[Core Skill or Competency 5]</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Education (Full Width) -->
+        <div class="page-2-education">
+            <section class="section education-section">
+                <h2 class="section-title">EDUCATION</h2>
+                
+                <div class="education-item">
+                    <div class="education-logo">
+                        <img src="[SchoolLogo.png]" alt="[School Name] Logo">
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div>
+                                <div class="degree-title">[Degree Name] ([Abbreviation])</div>
+                                <div class="company-name">[School/University Name]</div>
+                            </div>
+                            <div class="date-location">[Status: In Progress / Graduated Year]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-logo">
+                        <img src="[SchoolLogo.png]" alt="[School Name] Logo">
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div>
+                                <div class="degree-title">[Degree Name]</div>
+                                <div class="company-name">[School/University Name]</div>
+                            </div>
+                            <div class="date-location">[Graduation Year]</div>
+                        </div>
+                        <p class="job-description" style="margin-top: 8px; margin-bottom: 0;">[Optional: Notable coursework, thesis topic, or capstone focus].</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 2: Two Columns -->
+        <div class="resume-content page-2">
+            <div class="page-2-left">
+                <section class="section projects-section">
+                    <h2 class="section-title">PROJECTS</h2>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">[Project Name]: [Project Subtitle or Focus]</div>
+                                <div class="project-tag">[Project Category/Tag]</div>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            [Project description: what you built, the challenge it addressed, and the outcome. Include specific metrics or recognition if applicable. Example: "Designed and developed [what] targeting [goal]. Achieved [specific result] and [recognition/impact]."]
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">[Project Name]</div>
+                                <div class="project-tag">[Project Category/Tag]</div>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            [Project description highlighting technical approach, constraints overcome, and results. Example: "Developed [system/application] using [method/technology]. Earned [grade/recognition], with commendation for [specific strength] and [achievement]."]
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">[Project Name]: [Focus Areas]</div>
+                                <div class="project-tag">[Project Category/Tag]</div>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            [Project description showing systems thinking, analysis, or strategic work. Example: "Redesigned [system/process] for [organization/platform]. Produced [deliverable] and [impact/outcome]."]
+                        </p>
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="page-2-right">
+                <section class="section">
+                    <h2 class="section-title">TECHNICAL & ANALYTICAL SKILLS</h2>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <div class="project-title" style="font-size: 1rem; margin-bottom: 4px;">Technical Skills</div>
+                        <ul class="bullet-list" style="margin-top: 4px;">
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Technical skill 1, skill 2, skill 3]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Technical skill 4, skill 5, skill 6]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Technical skill 7, skill 8, skill 9]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Technical skill 10, skill 11, skill 12]</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 12px;">
+                        <div class="project-title" style="font-size: 1rem; margin-bottom: 4px;">Analytical Skills</div>
+                        <ul class="bullet-list" style="margin-top: 4px;">
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Analytical skill 1, skill 2, skill 3]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Analytical skill 4, skill 5, skill 6]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Analytical skill 7, skill 8, skill 9]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Analytical skill 10, skill 11, skill 12]</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 12px;">
+                        <div class="project-title" style="font-size: 1rem; margin-bottom: 4px;">Tools & Software</div>
+                        <ul class="bullet-list" style="margin-top: 4px;">
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Software/Tool 1] (proficiency level), [Tool 2], [Tool 3]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Software/Tool 4] (proficiency level), [Tool 5], [Tool 6]</li>
+                            <li style="margin-bottom: 3px; line-height: 1.4;">[Software/Tool 7], [Tool 8], [Tool 9]</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Structured Data for AI/GPT Search -->
+    <!-- Customize the structured data below with your information for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "[Your Full Name]",
+            "jobTitle": "[Your Current Title/Role]",
+            "worksFor": {
+                "@type": "EducationalOrganization",
+                "name": "[Your Current School/Organization]"
+            },
+            "alumniOf": [
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "[Your Previous School]",
+                    "degree": "[Your Degree]"
+                }
+            ],
+            "hasCredential": [
+                {
+                    "@type": "EducationalOccupationalCredential",
+                    "credentialCategory": "[Degree Type]",
+                    "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "[Issuing Organization]"
+                    }
+                }
+            ],
+            "hasOccupation": [
+                {
+                    "@type": "Occupation",
+                    "name": "[Job Title]",
+                    "occupationLocation": {
+                        "@type": "City",
+                        "name": "[City Name]"
+                    }
+                }
+            ],
+            "knowsAbout": [
+                "[Skill/Knowledge Area 1]",
+                "[Skill/Knowledge Area 2]",
+                "[Skill/Knowledge Area 3]",
+                "[Skill/Knowledge Area 4]",
+                "[Skill/Knowledge Area 5]",
+                "[Skill/Knowledge Area 6]"
+            ]
+        }
+    }
+    </script>
+</body>
+</html>
+

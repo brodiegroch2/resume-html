@@ -1,0 +1,20 @@
+name: Validate HTML
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check HTML files exist
+        run: |
+          test -f resume.html && echo "✓ resume.html found"
+          test -f coverletter_template.html && echo "✓ coverletter_template.html found"
+          test -f README.md && echo "✓ README.md found"
+          test -f LICENSE && echo "✓ LICENSE found"
+
