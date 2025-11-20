@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional HTML Resume & Cover Letter Templates</title>
+    <meta name="description" content="Modern, print-ready HTML resume and cover letter templates. Fully customizable, ATS-friendly, and optimized for PDF export.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #333;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+        }
+
+        .templates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .template-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .template-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .template-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .template-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+        }
+
+        .features {
+            margin: 40px 0;
+        }
+
+        .features h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .features li {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .templates {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Professional Resume Templates</h1>
+            <p>Modern, print-ready HTML templates for resumes and cover letters</p>
+        </div>
+
+        <div class="content">
+            <div class="badges">
+                <span class="badge">✅ MIT License</span>
+                <span class="badge">✅ Print-Ready</span>
+                <span class="badge">✅ ATS-Friendly</span>
+                <span class="badge">✅ Fully Customizable</span>
+                <span class="badge">✅ AI-Optimized</span>
+            </div>
+
+            <div class="templates">
+                <a href="resume.html" class="template-card">
+                    <h2>📋 Resume Template</h2>
+                    <p>Two-page professional resume with modern design, sidebar for skills, and comprehensive layout.</p>
+                    <span class="btn">View Resume Template</span>
+                </a>
+
+                <a href="coverletter_template.html" class="template-card">
+                    <h2>✉️ Cover Letter Template</h2>
+                    <p>Professional business-style cover letter template with proper formatting and structure.</p>
+                    <span class="btn">View Cover Letter</span>
+                </a>
+            </div>
+
+            <div class="features">
+                <h2>✨ Features</h2>
+                <ul>
+                    <li>🎨 Modern, clean design</li>
+                    <li>📄 Two-page resume layout</li>
+                    <li>🖨️ Print-optimized for PDF</li>
+                    <li>📱 Responsive design</li>
+                    <li>🔧 Easy customization</li>
+                    <li>🤖 AI-friendly (Cursor AI, Copilot)</li>
+                    <li>🎯 ATS-compatible structure</li>
+                    <li>💼 Professional formatting</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                <h2 style="margin-bottom: 15px; color: #333;">🚀 Quick Start</h2>
+                <ol style="line-height: 2; color: #666;">
+                    <li>Click on a template above to view it</li>
+                    <li>Right-click and "Save As" to download</li>
+                    <li>Open in your editor and replace placeholders</li>
+                    <li>Use Cursor AI or GitHub Copilot for easy customization</li>
+                    <li>Print to PDF when ready!</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <strong>📦 Repository:</strong> 
+                <a href="https://github.com/brodiegroch2/resume-html" target="_blank">GitHub</a>
+            </p>
+            <p style="margin-top: 10px; color: #666;">
+                Licensed under <a href="LICENSE">MIT License</a> | 
+                Made with ❤️ for job seekers everywhere
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
